@@ -1,5 +1,5 @@
 ## Program Requirements
-- Can be found in file: Program 2, Fall 2018.pdf
+- Can be found [here](Program2_Fall_2018.pdf):
 
 ## User Credentials
 Admin
