@@ -1,3 +1,6 @@
+## Program Requirements
+- Can be found in file: Program 2, Fall 2018.pdf
+
 ## User Credentials
 Admin
 - Name: "Admin", email: "admin@ncsu.edu", password: "ncsu rocks", role: Admin 
