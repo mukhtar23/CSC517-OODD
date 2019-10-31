@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  location: MyString
+  max_price: 9.99
+  min_price: 9.99
+  max_footage: 9.99
+  min_footage: 9.99
+
+two:
+  location: MyString
+  max_price: 9.99
+  min_price: 9.99
+  max_footage: 9.99
+  min_footage: 9.99

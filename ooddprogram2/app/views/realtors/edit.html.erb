@@ -1,0 +1,20 @@
+<h1>Editing Realtor</h1>
+
+<%= render 'Edit', realtor: @realtor %>
+
+Don't see your company, create here:
+<%= link_to 'Create Your Company', "/realtors/#{@realtor.id}/create_company" %>
+<br>
+<br>
+<%if current_user.role == 2 %>
+  <%= link_to 'Show', @realtor %>
+<%end %>
+<br>
+<br>
+<% if logged_in_admin?%>
+  <%= link_to 'Back', realtors_path %>
+
+<% else %>
+  <%= link_to 'Back to Realtor Home Page', home_realtor_path(@realtor) %>
+
+<%end %>

@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Your Interests</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @interests.each do |interest| %>
+    <tr>
+      <td><%= interest.house.location %></td>
+      <td><%= interest.house.square_ft %></td>
+      <td><%= interest.house.year_built %></td>
+      <td><%= interest.house.style %></td>
+      <td><%= interest.house.price %></td>
+      <td><%= interest.house.floor %></td>
+      <td><%= interest.house.basement %></td>
+      <td><%= interest.house.owner %></td>
+      <td><%= interest.house.contact_info %></td>
+      <td><%= interest.house.realtor_id %></td>
+      <td><%= interest.house.company_id %></td>
+      <td><%= interest.house.pic_link %></td>
+      <td><%= link_to 'Show', interest %></td>
+      <td><%= link_to 'Edit', edit_interest_path(interest) %></td>
+      <td><%= link_to 'Destroy', interest, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+  <%=link_to 'Back',home_hunter_path(current_user.hunter.id) %>
+<% if logged_in? %>
+  <%= link_to "Log out", logout_path, method: :delete %>
+<% end %>
+

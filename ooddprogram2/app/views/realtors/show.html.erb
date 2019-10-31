@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Edit Realtor <%= @realtor.user.name %>'s Profile</h1>
+
+
+<p>
+  <strong>User:</strong>
+  <%= @realtor.user.name %>
+</p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @realtor.company.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @realtor.user.email %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @realtor.user.phone %>
+</p>
+
+<%= link_to 'Edit', edit_realtor_path(@realtor) %> |
+
+<%if logged_in_admin? %>
+  <%= link_to 'Back To List of All Realtors', realtors_path%>
+
+<% else %>
+  <%= link_to 'Back To Realtor Home Page', home_realtor_path(@realtor) %>
+
+<%end %>
+

@@ -1,0 +1,10 @@
+<h1>List a house for sale</h1>
+<% unless @realtor.company_id == 3%>
+  <%= render 'listhouse', realtor: @realtor %>
+<% else %>
+  <%= "You have not choose a company to work for, please assign yourself a company at: realtors home page -> Edit Profile/Change Company" %>
+  <br>
+<% end %>
+
+<br>
+<%= link_to 'Back to Realtor Home Page', home_realtor_path(@realtor) %>

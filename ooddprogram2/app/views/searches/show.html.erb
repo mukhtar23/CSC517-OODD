@@ -1,0 +1,48 @@
+<p id="notice">Search Result<%= notice %></p>
+<% if @search.house_search.empty? %>
+  <p> No record Found</p>
+<%else%>
+  <table>
+    <thead>
+    <tr>
+      <th>Location</th>
+      <th>Square ft</th>
+      <th>Year built</th>
+      <th>Style</th>
+      <th>Price</th>
+      <th>Floor</th>
+      <th>Basement</th>
+      <th>Owner</th>
+      <th>Contact info</th>
+      <th>Realtor</th>
+      <th>Company</th>
+      <th>Pic link</th>
+      <th colspan="3"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @search.house_search.each do |house|%>
+        <tr>
+          <td><%= house.location %></td>
+          <td><%= house.square_ft %></td>
+          <td><%= house.year_built %></td>
+          <td><%= house.style %></td>
+          <td><%= house.price %></td>
+          <td><%= house.floor %></td>
+          <td><%= house.basement %></td>
+          <td><%= house.owner %></td>
+          <td><%= house.contact_info %></td>
+          <td><%= house.realtor_id %></td>
+          <td><%= house.company_id %></td>
+          <td><%= house.pic_link %></td>
+          <td><%= link_to 'Show', house %></td>
+          <td><%=link_to 'Add to interest list',"/searches/addinterest/#{current_user.hunter.id}/#{house.id}"%></td>
+          %>
+        </tr>
+
+        </tbody>
+      <%end %>
+      </table>
+
+   <%end%>
+<%= link_to 'Back', new_search_path%>

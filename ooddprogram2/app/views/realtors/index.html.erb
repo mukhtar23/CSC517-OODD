@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Realtors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Company</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @realtors.each do |realtor| %>
+      <tr>
+        <td><%= realtor.user.name %></td>
+        <td><%= realtor.company.name %></td>
+<!--        <td><%#= link_to 'Show', realtor %></td>-->
+        <td><%= link_to 'Edit', edit_realtor_path(realtor) %></td>
+        <% if realtor.user.name != "Admin" %>
+          <td><%= link_to 'Destroy', realtor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+        <% end %>
+<!--        <td><%#= link_to 'Destroy', realtor, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%#= link_to 'New Realtor', new_realtor_path %>
+<br>
+<%= link_to 'Back', current_user %>
+

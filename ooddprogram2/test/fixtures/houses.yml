@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  location: MyString
+  square_ft: 1.5
+  year_built: 1
+  style: 1
+  price: 1.5
+  floor: 1
+  basement: false
+  owner: MyString
+  contact_info: MyString
+  realtor_id: 1
+  company_id: 1
+  pic_link: MyString
+
+two:
+  location: MyString
+  square_ft: 1.5
+  year_built: 1
+  style: 1
+  price: 1.5
+  floor: 1
+  basement: false
+  owner: MyString
+  contact_info: MyString
+  realtor_id: 1
+  company_id: 1
+  pic_link: MyString

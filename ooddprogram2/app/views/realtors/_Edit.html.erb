@@ -1,0 +1,30 @@
+<%= form_tag(realtor_path(realtor), method: :put) do %>
+
+  <%= label_tag(:name, "Name:") %>
+  <%= text_field_tag(:name, realtor.user.name) %>
+
+  <%= label_tag(:email, "Email:") %>
+  <%= text_field_tag(:email, realtor.user.email) %>
+
+  <%= label_tag(:phone, "Phone:") %>
+  <%= text_field_tag(:phone, realtor.user.phone) %>
+
+  <%= label_tag(:set_pw, "Update your password?") %>
+  <%= select_tag(:set_pw, options_for_select([["No", 0], ["Yes", 1]])  ) %>
+
+  <%= label_tag(:password, "New Password:") %>
+  <%= text_field_tag(:password) %>
+
+  <%= label_tag(:company_id, "Company:") %>
+  <%  company_list=Company.all.select {|v| v.id != 3}.collect {|c| [c.name, c.id]} %>
+  <%= select_tag(:company_id, options_for_select(company_list)  ) %>
+
+  <br>
+  <br>
+
+  <%= submit_tag("Update") %>
+
+  <br>
+  <br>
+
+<% end %>

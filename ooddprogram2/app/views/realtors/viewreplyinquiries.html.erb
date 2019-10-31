@@ -1,0 +1,33 @@
+<h1>All inquiries for the houses of your working company.</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Inquiry ID</th>
+    <th>House ID</th>
+    <th>Interested Hunter</th>
+    <th>Subject</th>
+    <th>Message</th>
+    <th>Response</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @inquries.each do |iq| %>
+    <tr>
+      <td><%= iq.id %></td>
+      <td><%= iq.house_id %></td>
+      <td><%= iq.hunter.user.name %></td>
+      <td><%= iq.subject %></td>
+      <td><%= iq.message %></td>
+      <td><%= iq.response %></td>
+      <td><%= link_to 'Send Reply', "/realtors/#{@realtor.id}/InquiryRespond/#{iq.id}" %></td>
+    </tr>
+  <%end %>
+  </tbody>
+</table>
+
+<br>
+<br>
+
+<%= link_to 'Back to Realtor Home Page', home_realtor_path(@realtor) %>

@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Inquiries</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Subject</th>
+    <th>Message</th>
+    <th>Response</th>
+    <th>Hunter name</th>
+    <th>location</th>
+    <th>Square ft</th>
+    <th>Year built</th>
+    <th>Price</th>
+    <th> Floor</th>
+    <th>Basement</th>
+    <th></th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @inquiries.each do |inquiry| %>
+    <tr>
+      <td><%= inquiry.subject %></td>
+      <td><%= inquiry.message %></td>
+      <td><%= inquiry.response %></td>
+      <td><%= inquiry.hunter.user.name%></td>
+      <td><%= inquiry.house.location%></td>
+      <td><%= inquiry.house.square_ft %></td>
+      <td><%= inquiry.house.year_built %></td>
+      <td><%= inquiry.house.price %></td>
+      <td><%= inquiry.house.floor %></td>
+      <td><%= inquiry.house.basement %></td>
+
+      <!--        <td><%#= inquiry.house.pic_link %></td>-->
+      <td><%= link_to 'Show', inquiry %></td>
+      <td><%= link_to 'Edit', edit_inquiry_path(inquiry) %></td>
+      <td><%= link_to 'Destroy', inquiry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+<%=link_to 'Back' ,home_hunter_path(current_user.hunter.id) %>
+<% if logged_in? %>
+  <%= link_to "Log out", logout_path, method: :delete %>
+<% end %>
+
+

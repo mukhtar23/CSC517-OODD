@@ -1,0 +1,21 @@
+<h1>Showing House Pictures</h1>
+
+<br>
+<br>
+
+<% @house.images.each do |image| %>
+  <br>
+  <%= image_tag image %>
+  <br>
+<% end %>
+
+<br>
+<br>
+
+<%if logged_in_admin? %>
+  <%= link_to 'Back To Admin Home', current_user %>
+<%elsif logged_in_hunter?(@hunter)%>
+  <%= link_to 'Back', viewhouses_hunter_path %>
+  <%= link_to "Log out", logout_path, method: :delete %>
+<% end %>
+

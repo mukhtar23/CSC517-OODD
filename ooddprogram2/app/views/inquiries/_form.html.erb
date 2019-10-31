@@ -1,0 +1,28 @@
+<%= form_for(inquiry) do |f| %>
+  <% if inquiry.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(inquiry.errors.count, "error") %> prohibited this inquiry from being saved:</h2>
+
+      <ul>
+      <% inquiry.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :subject %>
+    <%= f.text_field :subject %>
+  </div>
+  <div class="field">
+    <%= f.label :message %>
+    <%= f.text_field :message %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<% if current_user.role!=3 %>
+<%link_to 'Back', hunters_path %>
+<% end %>

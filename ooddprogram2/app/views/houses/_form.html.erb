@@ -1,0 +1,81 @@
+<%= form_for(house) do |f| %>
+  <% if house.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(house.errors.count, "error") %> prohibited this house from being saved:</h2>
+
+      <ul>
+      <% house.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :location %>
+    <%= f.text_field :location %>
+  </div>
+
+  <div class="field">
+    <%= f.label :square_ft %>
+    <%= f.text_field :square_ft %>
+  </div>
+
+  <div class="field">
+    <%= f.label :year_built %>
+    <%= f.number_field :year_built %>
+  </div>
+
+  <div class="field">
+    <%= f.label :style %>
+    <%= f.number_field :style %>
+    <%=f.label "Input one of the following for house style: 0 - sinlge family home, 1 - apartment, 2 - condo" %>
+
+  </div>
+
+  <div class="field">
+    <%= f.label :price %>
+    <%= f.text_field :price %>
+  </div>
+
+  <div class="field">
+    <%= f.label :floor %>
+    <%= f.number_field :floor %>
+  </div>
+
+  <div class="field">
+    <%= f.label :basement %>
+    <%= f.check_box :basement %>
+  </div>
+
+  <div class="field">
+    <%= f.label :owner %>
+    <%= f.text_field :owner %>
+  </div>
+
+  <div class="field">
+    <%= f.label :contact_info %>
+    <%= f.text_field :contact_info %>
+  </div>
+
+  <div class="field">
+    <%= f.label :realtor_id %>
+    <%#= f.number_field :realtor_id %>
+    <%= f.collection_select(:realtor_id, Realtor.all, :id, :name) %>
+
+  </div>
+
+  <div class="field">
+    Company will be automatically selected based on the realtor.
+    <%#= f.label :company_id %>
+    <%#= f.number_field :company_id %>
+    <%#= f.collection_select(:company_id, Company.all, :id, :name) %>
+    <%#= f.label @company.name %>
+    <%#= f.select :company_id, [[@company.name, @company.id]] %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>

@@ -1,0 +1,32 @@
+<%= form_tag(realtors_path, method: :post) do %>
+
+  <%= label_tag(:info1, "If your email is registered with an existing account (e.g., hunter), the name, email, phone, password fields must match the record") %>
+  <%= label_tag(:info2, "If your email is not registered with us, please enter your info.") %>
+
+
+  <%= label_tag(:name, "Name:") %>
+  <%= text_field_tag(:name) %>
+
+  <%= label_tag(:email, "Email:") %>
+  <%= text_field_tag(:email) %>
+
+  <%= label_tag(:phone, "Phone:") %>
+  <%= text_field_tag(:phone) %>
+
+  <%= label_tag(:password, "Current password or New password") %>
+  <%= text_field_tag(:password) %>
+
+  <%= label_tag(:company_id, "Company:") %>
+  <%  company_list=Company.all.collect {|c| [c.name, c.id]} %>
+  <%= select_tag(:company_id, options_for_select(company_list)  ) %>
+
+
+  <br>
+  <br>
+
+  <%= submit_tag("Create") %>
+
+  <br>
+  <br>
+
+<% end %>

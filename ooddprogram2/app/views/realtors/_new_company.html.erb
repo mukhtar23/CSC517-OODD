@@ -1,0 +1,32 @@
+<%= form_tag("/realtors/#{realtor.id}/create_company", method: :put) do %>
+
+  <%= label_tag(:name, "Name:") %>
+  <%= text_field_tag(:name) %>
+
+  <%= label_tag(:website, "Website:") %>
+  <%= text_field_tag(:website ) %>
+
+  <%= label_tag(:address, "Address:") %>
+  <%= text_field_tag(:address) %>
+
+  <%= label_tag(:size, "Size (format: 50 or 50+ or 50-60):") %>
+  <%= text_field_tag(:size) %>
+
+  <%= label_tag(:year_founded, "Year Founded") %>
+  <%= number_field_tag(:year_founded) %>
+
+  <%= label_tag(:revenue, "Revenue") %>
+  <%= text_field_tag(:revenue) %>
+
+  <%= label_tag(:synopsis, "Synopsis") %>
+  <%= text_field_tag(:synopsis) %>
+
+  <br>
+  <br>
+
+  <%= submit_tag("Create Company") %>
+
+  <br>
+  <br>
+
+<% end %>

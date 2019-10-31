@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Companies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Website</th>
+      <th>Address</th>
+<!--      <th>Low bd</th>-->
+<!--      <th>Up bd</th>-->
+      <th>Size</th>
+      <th>Year founded</th>
+      <th>Revenue</th>
+      <th>Synopsis</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @companies.each do |company| %>
+    <% unless company.id == 3%>
+      <tr>
+        <td><%= company.name %></td>
+        <td><%= company.website %></td>
+        <td><%= company.address %></td>
+        <td><%= company.size %></td>
+        <td><%= company.year_founded %></td>
+        <td><%= company.revenue %></td>
+        <td><%= company.synopsis %></td>
+        <% if current_user.role!=3 %>
+        <td><%= link_to 'Show', company %></td>
+        <td><%= link_to 'Edit', edit_company_path(company) %></td>
+        <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
+      </tr>
+    <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<% if logged_in? %>
+
+    <%= link_to 'New Company', new_company_path %>
+    <br>
+    <br>
+    <%= link_to "Back to Admin Page", current_user %>
+    <br>
+    <br>
+<%end %>
+

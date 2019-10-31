@@ -1,0 +1,32 @@
+<h1>All Potential Buys of houses of your working company.</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>House ID</th>
+    <th>Listing Realtor</th>
+    <th>Buyer Name</th>
+    <th>Buyer Email</th>
+    <th>Buyer Phone</th>
+    <th>Preferred Contact</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @interests.each do |it| %>
+    <tr>
+      <td><%= it.house.id %></td>
+      <td><%= it.house.realtor.user.name %></td>
+      <td><%= it.hunter.user.name %></td>
+      <td><%= it.hunter.user.email %></td>
+      <td><%= it.hunter.user.phone %></td>
+      <td><%= it.hunter.user.contact_method_output %></td>
+    </tr>
+  <%end %>
+  </tbody>
+</table>
+
+<br>
+<br>
+
+<%= link_to 'Back to Realtor Home Page', home_realtor_path(@realtor) %>

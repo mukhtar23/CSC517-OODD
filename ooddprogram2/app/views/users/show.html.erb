@@ -1,0 +1,92 @@
+<p id="notice"><%= notice %></p>
+<h1>  <%= @user.name %>'s Profile</h1>
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @user.password %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @user.phone %>
+</p>
+
+<p>
+  <strong>Contact method:</strong>
+  <%= @user.contact_method_output %>
+</p>
+
+<%= link_to 'Edit Your Info', edit_user_path(@user) %>
+<br>
+<br>
+
+
+<% if logged_in? %>
+
+  Hi, User! Your registered roles are shown below:
+  <br>
+  (You may have multiple roles and you can switch roles using below links)
+  <br>
+  <br>
+
+  <% if !current_user.realtor.nil? %>
+  You are registered as a REALTOR, please visit your realtor home page here:
+  <%= link_to "Realtor's Home Page", home_realtor_path(current_user.realtor.id) %>
+<% end %>
+<br>
+
+<% if !current_user.hunter.nil? %>
+  You are registered as a HUNTER, please visit your hunter home page here:
+  <%= link_to "Hunter's Home Page",  home_hunter_path(current_user.hunter.id)%>
+<% end %>
+
+<% end %>
+
+<br>
+<br>
+<!--<%#= link_to 'Back to List of All users', users_path %> |-->
+<% if logged_in_admin? %>
+  <%= "You are the ADMINISTRATOR. " %>
+  <%= "Below are your privileged links. " %>
+
+  <br>
+  <br>
+
+  <%= link_to "View/Edit/New All Users", users_path %>
+    <br>
+    <br>
+    <%= link_to "View/Edit/New All Realtors", realtors_path %>
+    <br>
+    <br>
+    <%= link_to "View/Edit/New All House Hunters", hunters_path %>
+    <br>
+    <br>
+    <%= link_to "View/Edit/New All Houses", houses_path %>
+    <br>
+    <br>
+    <%= link_to "View/Edit/New All Real Estate Companies", companies_path %>
+    <br>
+    <br>
+    <%= link_to "View/Edit/New All Inquiries", inquiries_path %>
+    <br>
+    <br>
+  <%= link_to "View/Edit/New All Interests", interests_path %>
+  <br>
+  <br>
+<%end %>
+
+<%if @user.role ==3 %>
+  <%#=link_to 'Back' ,hunters_path %>
+  <br>
+<%end %>
+
+<%= link_to "Log out", logout_path, method: :delete %>

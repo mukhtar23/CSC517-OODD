@@ -1,0 +1,28 @@
+<% provide(:title, "Home") %>
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= yield(:title) %> | Ruby on Rails Tutorial Sample App</title>
+</head>
+<body>
+<!--<h1>Home</h1>-->
+<!--<p>-->
+<!--  This is the home page for the sample application.-->
+<!--</p>-->
+<div class="center jumbotron">
+  <h1>Home</h1>
+
+  <h2>
+    This is the home page for the sample application.
+  </h2>
+  <%= link_to "Sign in", login_path, class: "btn btn-lg btn-primary" %>
+  <br>
+  <br>
+  <%= link_to "Sign up", signup_path, class: "btn btn-lg btn-primary" %>
+  <br>
+  <br>
+  <%#= link_to "Show users", 'users#index',class: "btn btn-lg btn-primary" %>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,6 @@
+<h1>Add a Picture to House</h1>
+<% unless @realtor.company_id == 3%>
+  <%= render 'addhousepic', realtor: @realtor, house: @house %>
+<% else %>
+  <%= "You have not choose a company to work for, please assign yourself a company at: realtors home page -> Edit Profile/Change Company" %>
+<% end %>

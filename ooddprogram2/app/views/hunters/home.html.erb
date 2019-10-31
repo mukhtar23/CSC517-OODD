@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Welcome <%= current_user.name %></h1>
+  <br>
+<!--  <button class="button button1"><%#= link_to 'My profile', edit_hunter_path(current_user)%></button><br>-->
+<!--  <button><%#=link_to'Search',  %></button>-->
+<%#if logged_in_admin? %>
+  <button class="button button1"><%= link_to 'My profile', edit_hunter_path(current_user.hunter.id)%></button><br>
+
+<%#else %>
+<!--  <button class="button button1"><%#= link_to 'My profile', edit_hunter_path(current_user)%></button><br>-->
+
+<%#end %>
+  <br>
+  <button class="button button1"><%= link_to 'Search', new_search_path%></button><br>
+  <br>
+  <button class="button button1"><%= link_to 'Interest House list', viewinterest_hunter_path %></button><br>
+  <br>
+  <button class="button button1"><%= link_to 'Companies',viewcompany_hunter_path %></button><br>
+  <br>
+  <button class="button button1"><%= link_to 'View houses', viewhouses_hunter_path %></button><br>
+
+<%#= link_to 'View houses', houses_path %>
+  <button class="button button1"><br><%= link_to 'Inquiry', viewinquiry_hunter_path%></button><br>
+<br>
+
+  <%if logged_in_admin? %>
+  <br>
+  <br>
+  <%= link_to "Back to Admin Home Page", current_user %>
+  <br>
+  <br>
+  <% else %>
+  <%= link_to "Back to User Home Page", current_user %>
+  <br>
+  <br>
+<%end %>
+
+  <%= link_to "Log out", logout_path, method: :delete %>
+

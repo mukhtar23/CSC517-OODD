@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @company.name %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= @company.website %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @company.address %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @company.size %>
+</p>
+<!--<p>-->
+<!--  <strong>Low bd:</strong>-->
+  <%#= @company.low_bd %>
+<!--</p>-->
+
+<!--<p>-->
+<!--  <strong>Up bd:</strong>-->
+  <%#= @company.up_bd %>
+<!--</p>-->
+
+<p>
+  <strong>Year founded:</strong>
+  <%= @company.year_founded %>
+</p>
+
+<p>
+  <strong>Revenue:</strong>
+  <%= @company.revenue %>
+</p>
+
+<p>
+  <strong>Synopsis:</strong>
+  <%= @company.synopsis %>
+</p>
+
+<%= link_to 'Edit', edit_company_path(@company) %> |
+<a href="javascript:history.back()">Back</a>

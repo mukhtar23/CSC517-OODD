@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%#= @hunter.user_id %>
+  <%= @hunter.user.name%>
+
+</p>
+
+<%= link_to 'Edit', edit_hunter_path(@hunter) %> |
+<a href="javascript:history.back()">Back</a>

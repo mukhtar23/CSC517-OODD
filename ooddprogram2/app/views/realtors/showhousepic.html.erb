@@ -1,0 +1,16 @@
+<h1>Showing House Pictures</h1>
+
+<%= link_to 'Back to: View All Houses and Their Pictures / Edit My company\'s Houses\' Pictures', viewallhouses_realtor_path(@realtor) %>
+<br>
+<br>
+
+<% @house.images.each do |image| %>
+  <br>
+    <%= image_tag image %>
+  <br>
+<% end %>
+
+<br>
+<br>
+<%= link_to 'Back to: View All Houses and Their Pictures / Edit My company\'s Houses\' Pictures', viewallhouses_realtor_path(@realtor) %>
+

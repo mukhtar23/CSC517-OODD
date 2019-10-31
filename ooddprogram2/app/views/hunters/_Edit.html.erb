@@ -1,0 +1,26 @@
+<%= form_tag(hunter_path(hunter), method: :put) do %>
+
+  <%= label_tag(:name, "Name:") %>
+  <%= text_field_tag(:name, hunter.user.name) %>
+
+  <%= label_tag(:email, "Email:") %>
+  <%= text_field_tag(:email, hunter.user.email) %>
+
+  <%= label_tag(:phone, "Phone:") %>
+  <%= text_field_tag(:phone, hunter.user.phone) %>
+
+  <%= label_tag(:set_pw, "Update your password?") %>
+  <%= select_tag(:set_pw, options_for_select([["No", 0], ["Yes", 1]])  ) %>
+
+  <%= label_tag(:password, "New Password:") %>
+  <%= text_field_tag(:password) %>
+
+  <br>
+  <br>
+
+  <%= submit_tag("Update") %>
+
+  <br>
+  <br>
+
+<% end %>

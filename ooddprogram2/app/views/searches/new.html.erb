@@ -1,0 +1,32 @@
+<h1>Search Houses</h1>
+
+<%= form_for @search do |f| %>
+
+  <div class="field">
+    <%= f.label :location %><br />
+    <%= f.text_field :location %>
+  </div>
+
+  <div class="field">
+    <%= f.label :min_price, "Min Price" %>
+    <%= f.text_field :min_price, size: 10  %>
+    <%= f.label :max_price, "Max Price" %>
+    <%= f.text_field :max_price, size: 10  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :min_footage, "Min Area" %>
+    <%= f.text_field :min_footage, size: 10  %>
+    <%= f.label :max_footage, "Max Area" %>
+    <%= f.text_field :max_footage, size: 10  %>
+  </div>
+
+  <div class="actions"><%= f.submit "Search", class: "pure-button pure-button-primary" %></div>
+
+<% end %>
+
+<%= link_to 'Back', home_hunter_path(current_user.hunter.id) %>
+<% if logged_in? %>
+  <%= link_to "Log out", logout_path, method: :delete %>
+<% end %>
+

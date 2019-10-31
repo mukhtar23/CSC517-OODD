@@ -1,0 +1,41 @@
+<h1>My houses</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Location</th>
+    <th>Footage</th>
+    <th>Year Built</th>
+    <th>Style</th>
+    <th>Price</th>
+    <th>Number of Floors</th>
+    <th>Basement</th>
+    <th>Owner</th>
+    <th>Edit</th>
+    <th>Delete</th>
+
+  </tr>
+  </thead>
+
+  <tbody>
+    <% @houses.each do |house| %>
+      <tr>
+        <td><%= house.location %></td>
+        <td><%= house.square_ft %></td>
+        <td><%= house.year_built %></td>
+        <td><%= house.style_output %></td>
+        <td><%= house.price %></td>
+        <td><%= house.floor %></td>
+        <td><%= house.basement %></td>
+        <td><%= house.owner %></td>
+        <td><%= link_to 'Edit', "/realtors/#{@realtor.id}/editmyhouses/#{house.id}" %></td>
+        <td><%= link_to 'Delete', "/realtors/#{@realtor.id}/deletemyhouses/#{house.id}" %></td>
+      </tr>
+    <%end %>
+  </tbody>
+</table>
+
+<br>
+<br>
+
+<%= link_to 'Back to Realtor Home Page', home_realtor_path(@realtor) %>

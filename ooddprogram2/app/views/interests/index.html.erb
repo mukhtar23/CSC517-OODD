@@ -1,0 +1,62 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Interests</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Location</th>
+      <th>Square ft</th>
+      <th>Year built</th>
+      <th>Style</th>
+      <th>Price</th>
+      <th>Floor</th>
+      <th>Basement</th>
+      <th>Owner</th>
+      <th>Contact info</th>
+      <th>Company</th>
+      <th>-------</th>
+      <th>Hunter</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @interests.each do |interest| %>
+      <tr>
+        <td><%= interest.house.location %></td>
+        <td><%= interest.house.square_ft %></td>
+        <td><%= interest.house.year_built %></td>
+        <td><%= interest.house.style %></td>
+        <td><%= interest.house.price %></td>
+        <td><%= interest.house.floor %></td>
+        <td><%= interest.house.basement %></td>
+        <td><%= interest.house.owner %></td>
+        <td><%= interest.house.contact_info %></td>
+        <td><%= interest.house.company_id %></td>
+        <td><%= "-------" %></td>
+        <td><%= interest.hunter.user.name %></td>
+
+        <td><%= link_to 'Show', interest %></td>
+        <td><%= link_to 'Edit', edit_interest_path(interest) %></td>
+        <td><%= link_to 'Destroy', interest, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<% if logged_in_hunter?(current_user)%>
+  <%= link_to "Back", home_hunter_path(current_user.hunter.id) %>
+<% end %>
+
+
+<% if logged_in? %>
+  <%if logged_in_admin? %>
+    <%= link_to "Back to Admin Page", current_user %>
+    <br>
+
+  <%end %>
+  <%= link_to "Log out", logout_path, method: :delete %>
+<% end %>
+

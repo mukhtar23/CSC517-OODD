@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Hi, Realtor <%= @realtor.user.name %>! Welcome back!</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Company</th>
+  </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td><%= @realtor.user.name %></td>
+      <td><%= @realtor.company.name %></td>
+      <td><%= link_to 'Show Profile', @realtor %></td>
+      <td><%= link_to 'Edit Profile/Change Company', edit_realtor_path(@realtor) %></td>
+    </tr>
+  </tbody>
+</table>
+
+
+<br>
+<br>
+
+<%= link_to 'View or Edit My Company Info', editmycompany_realtor_path(@realtor) %>
+<br>
+
+<%= link_to 'List a House for Sale', listhouse_realtor_path(@realtor) %>
+<br>
+
+<%= link_to 'View or Edit My Houses', editmyhouses_realtor_path(@realtor) %>
+<br>
+
+<%= link_to 'View All Houses and Their Pictures. Add Pictures of to Houses of My Company', viewallhouses_realtor_path(@realtor) %>
+<br>
+
+<%= link_to 'View All Potential Buyers of Houses of My Company', viewbuyers_realtor_path(@realtor) %>
+<br>
+
+<%= link_to 'View All Inquiries of Houses of My Company and Send Replies', viewreplyinquiries_realtor_path(@realtor) %>
+
+
+<br>
+<br>
+
+
+<%= link_to 'Back to User Page', @realtor.user %>
+
+<br>
+

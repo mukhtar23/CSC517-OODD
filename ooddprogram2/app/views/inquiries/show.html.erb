@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @inquiry.subject %>
+</p>
+
+<p>
+  <strong>Message:</strong>
+  <%= @inquiry.message %>
+</p>
+
+<p>
+  <strong>Response:</strong>
+  <%= @inquiry.response %>
+</p>
+
+<p>
+  <strong>Hunter:</strong>
+  <%= @inquiry.hunter_id %>
+</p>
+
+<p>
+  <strong>House:</strong>
+  <%= @inquiry.house_id %>
+</p>
+
+<%= link_to 'Edit', edit_inquiry_path(@inquiry) %> |
+<a href="javascript:history.back()">Back</a>

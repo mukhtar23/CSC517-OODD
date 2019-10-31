@@ -1,0 +1,14 @@
+<%= form_tag("/realtors/#{realtor.id}/InquiryRespond/#{inquiry.id}", method: :put) do %>
+
+  <%= label_tag(:response, "Response:") %>
+  <%= text_area(:response, :hatch, cols: "120", rows: "20") %>
+
+  <br>
+  <br>
+
+  <%= submit_tag("Send The reply") %>
+
+  <br>
+  <br>
+
+<% end %>

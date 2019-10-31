@@ -1,0 +1,41 @@
+<%= form_tag("/realtors/#{realtor.id}/editmyhouses/#{house.id}", method: :put) do %>
+
+  <%= label_tag(:location, "Location:") %>
+  <%= text_field_tag(:location, house.location) %>
+
+  <%= label_tag(:square_ft, "Footate (in square ft):") %>
+  <%= number_field_tag(:square_ft, house.square_ft) %>
+
+  <%= label_tag(:year_built, "Year Built") %>
+  <%= number_field_tag(:year_built, house.year_built) %>
+
+  <%= label_tag(:style, "Style") %>
+  <%= select_tag(:style, options_for_select([["single family home", 0], ["apartment", 1], ["condo", 1]])  ) %>
+
+  <%= label_tag(:price, "Price") %>
+  <%= number_field_tag(:price, house.price) %>
+
+  <%= label_tag(:floor, "Number of floors") %>
+  <%= number_field_tag(:floor, house.floor) %>
+
+  <%= label_tag(:basement, "Basement") %>
+  <%= select_tag(:basement, options_for_select([["No", 0], ["Yes", 1]])  ) %>
+
+  <%= label_tag(:owner, "Owner:") %>
+  <%= text_field_tag(:owner, house.owner) %>
+
+  <%= label_tag(:contact_info, "Realtor contact info:") %>
+  <%= text_field_tag(:contact_info, house.contact_info) %>
+
+  <%= label_tag(:info, "You can add pictures to house in realtor_home.") %>
+
+
+  <br>
+  <br>
+
+  <%= submit_tag("Update house") %>
+
+  <br>
+  <br>
+
+<% end %>

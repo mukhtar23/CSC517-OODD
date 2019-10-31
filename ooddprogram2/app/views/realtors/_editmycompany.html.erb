@@ -1,0 +1,33 @@
+<%= form_tag(editmycompany_realtor_path(realtor), method: :put) do %>
+  <% company=realtor.company%>
+
+  <%= label_tag(:name, "Name:") %>
+  <%= text_field_tag(:name, company.name) %>
+
+  <%= label_tag(:website, "Website:") %>
+  <%= text_field_tag(:website, company.website ) %>
+
+  <%= label_tag(:address, "Address:") %>
+  <%= text_field_tag(:address, company.address) %>
+
+  <%= label_tag(:size, "Size (format: 50 or 50+ or 50-60):") %>
+  <%= text_field_tag(:size, company.size) %>
+
+  <%= label_tag(:year_founded, "Year Founded") %>
+  <%= number_field_tag(:year_founded, company.year_founded) %>
+
+  <%= label_tag(:revenue, "Revenue") %>
+  <%= text_field_tag(:revenue, company.revenue) %>
+
+  <%= label_tag(:synopsis, "Synopsis") %>
+  <%= text_field_tag(:synopsis, company.synopsis) %>
+
+  <br>
+  <br>
+
+  <%= submit_tag("Update Company") %>
+
+  <br>
+  <br>
+
+<% end %>

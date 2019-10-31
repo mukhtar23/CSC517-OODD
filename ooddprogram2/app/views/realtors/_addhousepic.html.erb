@@ -1,0 +1,9 @@
+
+<%= form_tag("/realtors/#{@realtor.id}/addhousepic/#{house.id}", method: :put, multipart: true) do %>
+  <%= label_tag(:image, "Please select an image to upload.") %>
+  <%= file_field_tag(:image) %>
+
+  <br>
+  <br>
+  <%= submit_tag("Upload Picture") %>
+<% end %>

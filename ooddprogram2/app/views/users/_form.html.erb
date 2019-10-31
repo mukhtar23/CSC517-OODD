@@ -1,0 +1,58 @@
+<%= form_for(user) do |f| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <%= f.text_field :password %>
+    <%= f.label "Minimum length of 6 characters." %>
+    <%= f.label "If you are an existing user who wants to add a new role, please use your current password." %>
+
+
+  </div>
+
+  <div class="field">
+    <%= f.label :phone %>
+    <%= f.number_field :phone %>
+    <%= f.label "Format ex: 1234567890 (no dashes)" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :contact_method %>
+    <%= f.number_field :contact_method%>
+    <%=f.label "Input one of the following for contact method: 0 - email, 1 - phone, 2 - text" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :role %>
+    <%= f.select(:role, options_for_select([["Realtor", 2], ["Hunter", 3]])) %>
+  </div>
+
+<!--  <div class="field">-->
+    <%#= f.label :curr_role %>
+    <%#= f.number_field :curr_role %>
+<!--  </div>-->
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,13 @@
+<h1>View and Edit My Company</h1>
+
+<% unless @realtor.company_id == 3 %>>
+  <%= render 'editmycompany', realtor: @realtor %>
+<% else %>
+  <%= "You haven't not select a company to work with, Please select a company for yourself at: realtors home page -> Edit Profile/Change Company" %>
+  <br>
+<% end %>
+<br>
+<br>
+
+
+<%= link_to 'Back to Realtor Home Page', home_realtor_path(@realtor) %>

@@ -1,0 +1,48 @@
+<h1>All Houses. You can only edit pictures of the houses of your working company.</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>House ID</th>
+    <th>Location</th>
+    <th>Footage</th>
+    <th>Year Built</th>
+    <th>Style</th>
+    <th>Price</th>
+    <th>Number of Floors</th>
+    <th>Basement</th>
+    <th>Owner</th>
+    <th>Company</th>
+    <th>View Pictures</th>
+    <th>Edit Pictures</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @houses.each do |house| %>
+    <tr>
+      <td><%= house.id %></td>
+      <td><%= house.location %></td>
+      <td><%= house.square_ft %></td>
+      <td><%= house.year_built %></td>
+      <td><%= house.style_output %></td>
+      <td><%= house.price %></td>
+      <td><%= house.floor %></td>
+      <td><%= house.basement %></td>
+      <td><%= house.owner %></td>
+      <td><%= house.company.name %></td>
+      <td><%= link_to 'View Pictures', "/realtors/#{@realtor.id}/showhousepic/#{house.id}" %></td>
+      <% if house.company == @realtor.company %>
+        <td><%= link_to 'Add a Picture', "/realtors/#{@realtor.id}/addhousepic/#{house.id}"%></td>
+      <% else %>
+        <td>No Permission</td>
+    <% end %>
+    </tr>
+  <%end %>
+  </tbody>
+</table>
+
+<br>
+<br>
+
+<%= link_to 'Back to Realtor Home Page', home_realtor_path(@realtor) %>

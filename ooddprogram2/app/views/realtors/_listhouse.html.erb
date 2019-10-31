@@ -1,0 +1,42 @@
+<%= form_tag(listhouse_realtor_path(realtor), method: :put) do %>
+  <% company=realtor.company%>
+
+  <%= label_tag(:location, "Location:") %>
+  <%= text_field_tag(:location) %>
+
+  <%= label_tag(:square_ft, "Footate (in square ft):") %>
+  <%= number_field_tag(:square_ft ) %>
+
+  <%= label_tag(:year_built, "Year Built") %>
+  <%= number_field_tag(:year_built) %>
+
+  <%= label_tag(:style, "Style") %>
+  <%= select_tag(:style, options_for_select([["single family home", 0], ["apartment", 1], ["condo", 1]])  ) %>
+
+  <%= label_tag(:price, "Price") %>
+  <%= number_field_tag(:price) %>
+
+  <%= label_tag(:floor, "Number of floors") %>
+  <%= number_field_tag(:floor) %>
+
+  <%= label_tag(:basement, "Basement") %>
+  <%= select_tag(:basement, options_for_select([["No", 0], ["Yes", 1]])  ) %>
+
+  <%= label_tag(:owner, "Owner:") %>
+  <%= text_field_tag(:owner) %>
+
+  <%= label_tag(:contact_info, "Realtor contact info:") %>
+  <%= text_field_tag(:contact_info) %>
+
+  <%= label_tag(:info, "You can add pictures to house after you list it!") %>
+
+
+  <br>
+  <br>
+
+  <%= submit_tag("List house") %>
+
+  <br>
+  <br>
+
+<% end %>

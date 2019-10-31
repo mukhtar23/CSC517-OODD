@@ -1,0 +1,18 @@
+<%= form_tag(hunter_path(hunter), method: :put) do %>
+
+  <%= label_tag(:location, "Location:") %>
+  <%= text_field_tag(:location, house.location) %>
+
+  <%= label_tag(:range, "Price:") %>
+  <%= text_field_tag(:email, hunter.user.email) %>
+
+
+  <br>
+  <br>
+
+  <%= submit_tag("Search") %>
+
+  <br>
+  <br>
+
+<% end %>

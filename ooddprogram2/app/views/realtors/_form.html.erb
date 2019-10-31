@@ -1,0 +1,31 @@
+<%= form_for(realtor) do |f| %>
+  <% if realtor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(realtor.errors.count, "error") %> prohibited this realtor from being saved:</h2>
+
+      <ul>
+      <% realtor.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %>
+    <%= f.number_field :user_id %>
+    <%#= f.collection_select(:user_id, Realtor.all, :id, :user_id) %>
+
+  </div>
+
+  <div class="field">
+    <%= f.label :company_id %>
+    <%#= f.number_field :company_id %>
+    <%= f.collection_select(:company_id, Company.all, :id, :name) %>
+
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
